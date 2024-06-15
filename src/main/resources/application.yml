@@ -1,0 +1,28 @@
+#spring.application.name=suntel1
+server:
+  port: 9192
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=suntel;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: Qwerty12
+
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServerDialect
+      ddl-auto: update
+      format_sql: true
+    servlet:
+     multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 2KB
+
+auth:
+  token:
+    expirationInMils: 3600000
+    jwtSecret: c13d5e1049e36ba6873afef3962600dc26708c52283bd54ee5a763bb2a2cbc1a
+
